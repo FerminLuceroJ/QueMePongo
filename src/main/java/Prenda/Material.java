@@ -2,10 +2,10 @@ package Prenda;
 
 import lombok.Getter;
 
-public class Material {
+public enum Material{
 
-    @Getter
-    private Trama trama;
-    private
-
+    ALGODON,
+    NYLON,
+    CUERO,
+    JEAN
 }

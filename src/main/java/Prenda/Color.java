@@ -8,5 +8,8 @@ public class Color {
     @Setter @Getter
     private Color color_secundario;
 
+    public Color(Color color_secundario) {
 
+        color_secundario = color_secundario;
+    }
 }

@@ -13,21 +13,30 @@ public class Prenda {
     private Color color_principal;
 
 
-    public Prenda(Categoria categoria, Tipo tipo, Material material, Color color_principal){
+    public Prenda(Tipo tipo, Color color_principal, Material material, Categoria categoria) {
 
-        this.categoria = categoria;
-        this.tipo = tipo;
-        this.material = material;
-        this.color_principal = color_principal;
+        if (tipo != null || color_principal != null || material != null || categoria != null) {
+
+            this.tipo = tipo;
+            this.material = material;
+            this.color_principal = color_principal;
+            this.categoria = categoria;
+        } else {
+            throw new IllegalArgumentException("La prenda no es válida y no puede ser instanciada.");
+        }
     }
 
-    public Prenda(Categoria categoria, Tipo tipo, Material material, Color color_principal, Color color_secundario){
+    public Prenda(Tipo tipo, Color color_principal, Color color_secundario, Material material, Categoria categoria){
 
-        this.categoria = categoria;
-        this.tipo = tipo;
-        this.material = material;
-        this.color_principal = color_principal;
-        this.color_principal.setColor_secundario(color_secundario);
+        if (tipo != null || color_principal != null || color_secundario != null ||  material != null || categoria != null) {
+            this.tipo = tipo;
+            this.material = material;
+            this.color_principal = color_principal;
+            this.color_principal.setColor_secundario(color_secundario);
+            this.categoria = categoria;
+        } else {
+            throw new IllegalArgumentException("La prenda no es válida y no puede ser instanciada.");
+        }
     }
     public boolean esValida() {
 
